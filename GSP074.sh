@@ -53,3 +53,23 @@ echo '####### Task 6: List details for an object #########'
 echo '###########################################'
 
 gcloud storage ls -l  gs://$PROJECT_ID/ada.jpg
+
+echo '###########################################'
+echo '####### Task 7. Make your object publicly accessible #########'
+echo '###########################################'
+
+gsutil acl ch -u AllUsers:R gs://$PROJECT_ID/ada.jpg
+
+echo '###########################################'
+echo '####### Task 8. Remove public access #########'
+echo '###########################################'
+
+gsutil acl ch -d AllUsers gs://$PROJECT_ID/ada.jpg
+
+echo '###########################################'
+echo '####### Delete Objects #########'
+echo '###########################################'
+
+gcloud storage rm  gs://$PROJECT_ID/ada.jpg
+
+echo 'DONE'
