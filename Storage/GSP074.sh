@@ -6,7 +6,6 @@ echo 'In this hands-on lab you will learn how to use Google Cloud command line t
     * Make objects in a storage bucket publicly accessible'
 ##########################################################    
 read -p 'Ingress location: ' LOCATION
-read -p 'Ingress REGION: ' REGION
 
 gcloud config set compute/region "$REGION"
 
@@ -15,7 +14,7 @@ PROJECT_ID=$(gcloud config get-value project)
 echo '###########################################'
 echo '######### Task 1. Create a bucket ##########'
 echo '###########################################'
-gcloud storage buckets create gs://$PROJECT_ID --default-storage-class=standard --location=$LOCATION  --uniform-bucket-level-access --no-public-access-prevention
+gcloud storage buckets create gs://$PROJECT_ID --default-storage-class=standard --location=$LOCATION 
 
 echo '###########################################'
 echo '####### Download image #############'
