@@ -6,7 +6,7 @@ echo '####################################################'
     
 gcloud pubsub topics create myTopic
 
-input 'Validate task'
+read 'Validate task'
 
 echo 'Creating two more topics'
 gcloud pubsub topics create Test1
@@ -31,7 +31,7 @@ echo '####################################################'
 echo 'create a subscription called mySubscription to topic myTopic'
 gcloud  pubsub subscriptions create --topic myTopic mySubscription
 
-input 'Validate task'
+read 'Validate task'
 
 echo 'Add another two subscriptions to myTopic'
 gcloud  pubsub subscriptions create --topic myTopic Test1
@@ -62,7 +62,7 @@ gcloud pubsub subscriptions pull mySubscription --auto-ack
 gcloud pubsub subscriptions pull mySubscription --auto-ack
 gcloud pubsub subscriptions pull mySubscription --auto-ack
 
-input 'Validate task'
+read 'Validate task'
 echo '####################################################'
 echo 'Task 4. Pub/Sub pulling all messages from subscriptions'
 echo '####################################################'
